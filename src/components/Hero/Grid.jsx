@@ -16,19 +16,19 @@ const Card = ({ frontTitle, frontSubtitle, backContent }) => (
 );
 
 const Grid = () => (
-  <div className="topCards grid gap-20 justify-center p-2  mx-auto w-full lg:min-w-[60em] sm:px-40  lg:px-20  grid-cols-1 lg:grid-cols-3">
+  <div className="topCards grid gap-10 justify-center p-2  mx-auto w-full lg:min-w-[60em] sm:px-40 md:px-24 lg:px-10  grid-cols-1 lg:grid-cols-3">
     <Card
-      frontTitle="The Fair"
+      frontTitle="Events"
       frontSubtitle="Time for some fun"
       backContent="This would be some longer text that gives a description of the things from the other side, I guess."
     />
     <Card
-      frontTitle="Adventure Park"
+      frontTitle="Experience"
       frontSubtitle="Let’s Explore!"
       backContent="Experience thrilling rides and unforgettable memories in our Adventure Park."
     />
     <Card
-      frontTitle="Food Fest"
+      frontTitle="Room"
       frontSubtitle="Delicious Delights"
       backContent="Indulge in a variety of cuisines from all over the world, crafted with love."
     />

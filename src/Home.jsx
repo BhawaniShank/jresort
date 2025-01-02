@@ -1,4 +1,8 @@
 import React from "react";
+import { motion } from "framer-motion";
+
+
+import pricetag from './assets/Hero/pricetagg.png'
 import Button from "./components/Button.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import BookingForm from "./components/Hero/BookingForm.jsx";
@@ -9,7 +13,9 @@ import LogoSlider from "./components/LogoSlider/LogoSlider.jsx";
 import Contact from "./components/Contact/Contact.jsx"
 import Experience from "./components/Experience/Experience.jsx"
 import LuxurySuiteCard from "./components/LuxurySuiteCard/LuxurySuiteCard.jsx";
-// import Grid from "./components/Hero/Grid.jsx";
+
+import Grid from "./components/Hero/Grid.jsx";
+import TypingAnimation from "./components/Hero/TypingAnimation.jsx";
 // import Hero from "./components/Hero/Hero"
 const Home = () => {
   return (
@@ -31,9 +37,9 @@ const Home = () => {
 
 <div className="relative w-[100%] max-w-[120em] mx-auto h-full z-0 ">
 <Navbar />
-<div className="relative">
+<div className="relative h-[34em]">
 <video
-    className="w-full h-[30em]  md:h-[40em] lg:h-[50em] object-cover group "
+    className="w-full h-full md:h-full object-cover group "
     autoPlay
     loop
     muted
@@ -43,28 +49,51 @@ const Home = () => {
    
 </video>
 
-<div className="absolute inset-0 bg-black bg-opacity-20 flex flex-col justify-center items-center text-center gap-5 text-white px-4">
-    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4">
-        Welcome to <span className="italic">India's</span> first luxury<br /> heritage polo resort
-    </h1>
-    <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">
-        125 luxurious rooms amid a 20-acre private estate ideal for milestone celebrations and a unique<br /> curated experience.
-    </p>
-    
-</div>
+<TypingAnimation/>
+
+
+
+
+
 <BookingForm />
 </div>
+<motion.div
+  style={{ 
+    transformOrigin: "top right", 
+    width: "100px",
+    height: "100px"
+  }} 
+  className="fixed md:bottom-10 z-20 right-0 w-[150px] h-[150px]" 
+  animate={{
+    rotate: [0, -15, 10, 0],
+  }}
+  transition={{
+    duration: 5,
+    repeat: Infinity,
+    repeatType: "loop",
+    ease: "easeInOut",
+  }}
+>
+  <img
+    src={pricetag}
+    alt=""
+    className="w-full h-full object-contain" 
+  />
+  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -rotate-45 -translate-y-1/2 text-white font-bold text-sm">
+    BookNow
+  </div>
+</motion.div>
 
 {/* <Hero/> */}
 
-<Page2/>
-{/* <Grid/> */}
-<CuratedExperience/>
-<LogoSlider/>
-<Contact/>
-<Experience/>
-<LuxurySuiteCard/>
-<Footer/>
+{/* <Page2/> */}
+<Grid/>
+{/* <CuratedExperience/> */}
+{/* <LogoSlider/> */}
+{/* <Contact/> */}
+{/* <Experience/> */}
+{/* <LuxurySuiteCard/> */}
+{/* <Footer/> */}
 </div>
   );
 };

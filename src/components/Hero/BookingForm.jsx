@@ -17,11 +17,11 @@ const BookingForm = () => {
       
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-black lg:bg-opacity-50 p-4 md:rounded-md grid grid-cols-3 sm:grid-cols-5 h-auto md:h-min lg:grid-cols-6 gap-2 md:gap-4 max-w-6xl md:mt-10 lg:mt-0 w-full md:absolute inset-x-0 md:inset-y-[70%]  mx-auto"
+        className="md:bg-black bg-opacity-50 p-4 md:rounded-md grid grid-cols-3 sm:grid-cols-5 h-full md:h-min  gap-2 md:gap-4 max-w-4xl  lg:mt-0 w-full absolute inset-x-0 inset-y-[70%]  mx-auto"
       >
         {/* Check In */}
-        <div className="text-white">
-          <label className="block mb-1 font-medium text-sm">Check In</label>
+        <div className="text-white hidden md:block">
+          <label className="block mb-1  font-medium text-sm">Check In</label>
           <div className="flex items-center space-x-1">
             <input
               type="date"
@@ -35,7 +35,7 @@ const BookingForm = () => {
         </div>
 
         {/* Check Out */}
-        <div className="text-white">
+        <div className="text-white hidden md:block">
           <label className="block mb-1 font-medium text-sm">Check Out</label>
           <div className="flex items-center space-x-1">
             <input
@@ -50,7 +50,7 @@ const BookingForm = () => {
         </div>
 
         {/* Adults */}
-        <div className="text-white">
+        <div className="text-white hidden md:block">
           <label className="block mb-1 font-medium text-sm">Adults</label>
           <div className="flex items-center space-x-1">
             <select
@@ -70,7 +70,7 @@ const BookingForm = () => {
         </div>
 
         {/* Children */}
-        <div className="text-white">
+        <div className="text-white hidden md:block">
           <label className="block mb-1 font-medium text-sm">Children</label>
           <div className="flex items-center space-x-1">
             <select
@@ -89,36 +89,18 @@ const BookingForm = () => {
           )}
         </div>
 
-        {/* Activities */}
-        <div className="text-white col-span-1 sm:col-span-1">
-          <label className="block mb-1 font-medium text-sm">Activities</label>
-          <div className="flex items-center space-x-1">
-            <select
-              {...register("activities", { required: "Please select an activity" })}
-              className="w-full bg-white text-black p-1 rounded text-sm"
-            >
-              <option value="">Select</option>
-              <option value="0">Horse Riding</option>
-              <option value="1">Jungle Safari</option>
-              <option value="2">Shaahi Meal</option>
-              <option value="3">Other</option>
-            </select>
-          </div>
-          {errors.activities && (
-            <p className="text-red-500 text-xs mt-1">{errors.activities.message}</p>
-          )}
-        </div>
+      
 
         {/* Book Now Button */}
-        <div className="text-white col-span-1 sm:col-span-5 lg:col-span-1 mt-6 md:-mt-1 text-center">
-          <p className="text-yellow-400 mb-1 hidden md:block self-center text-base font-medium">
+        <div className="text-white col-span-3 sm:col-span-5  md:col-span-1 mt-6 md:-mt-1 text-center">
+          <p className="text-yellow-400 mb-1 hidden lg:block self-center text-base font-medium">
             From 8,925 INR/Night
           </p>
           <button
             type="submit"
-            className="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-1 px-4 rounded text-xs sm:text-sm transition-all duration-300"
+            className="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-1 px-4 mt-7 lg:mt-0 rounded text-xl md:text-xs lg:text-sm transition-all duration-300"
           >
-            Book Now
+          Check availability
           </button>
         </div>
       </form>
